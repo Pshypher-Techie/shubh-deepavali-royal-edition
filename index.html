@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubh Deepavali — The Art of Auspicious Illumination | Royal Horology of Light</title>
+    
+    <!-- Security Headers & Policies -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    <meta name="theme-color" content="#011910">
+
+    <!-- Meta tags for social preview & WhatsApp sharing -->
+    <meta name="description" content="A superlative celebration of Diwali crafted in the grand tradition of royal Indian luxury and horological precision. Personalize your sacred greeting.">
+    <meta property="og:title" content="Shubh Deepavali — The Art of Auspicious Illumination">
+    <meta property="og:description" content="May Timeless Light Illuminate Your Destiny. Experience the royal Diwali celebration with personalized greetings.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shubh Deepavali — The Art of Auspicious Illumination">
+    <meta name="twitter:description" content="Crafted in the eternal spirit of Indian horology and supreme aesthetic perfection. Personalize your greeting.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 5 C55 25 75 45 75 65 C75 80 63 92 50 92 C37 92 25 80 25 65 C25 45 45 25 50 5 Z' fill='%23dfb76c'/><path d='M50 25 C53 38 65 52 65 65 C65 74 58 82 50 82 C42 82 35 74 35 65 C35 52 47 38 50 25 Z' fill='%23ff9f1c'/></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rolex: {
+                            deep: '#011910',      /* Deepest midnight emerald */
+                            dark: '#03261a',      /* Rolex iconic dark green */
+                            primary: '#004b2e',   /* Authentic Rolex oyster green */
+                            emerald: '#006039',   /* Rolex signature green */
+                            accent: '#0d3826',    /* Card slate emerald */
+                        },
+                        gold: {
+                            light: '#f5e3b5',
+                            champagne: '#dfb76c', /* Rolex noble champagne gold */
+                            pure: '#d4af37',      /* 24K Royal Indian gold */
+                            antique: '#b38728',   /* Rich antique gold */
+                            deep: '#825c16',
+                        },
+                        diya: {
+                            amber: '#ff9f1c',
+                            ruby: '#b21e35',
+                            flame: '#ff5400',
+                            glow: '#ffbe0b',
+                        },
+                        velvet: {
+                            obsidian: '#080d0b',
+                            maroon: '#1f080c',
+                            card: '#081410',
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        garamond: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        script: ['Great Vibes', 'cursive'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        royal: ['Rozha One', 'serif'],
+                    },
+                    letterSpacing: {
+                        'widest-plus': '0.3em',
+                        'super-wide': '0.45em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Luxury CSS -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-velvet-obsidian text-stone-200 font-sans antialiased overflow-x-hidden selection:bg-gold-champagne selection:text-rolex-deep">
+
+    <!-- BACKGROUND CANVAS FOR INTERACTIVE GOLDEN PARTICLES & FIREWORKS -->
+    <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-10 w-full h-full"></canvas>
+
+    <!-- ROLEX-STYLE LUXURY TOP STATUS TICKER -->
+    <div class="bg-gradient-to-r from-rolex-deep via-rolex-dark to-rolex-deep border-b border-gold-champagne/20 py-1.5 px-4 text-center text-[10px] md:text-xs tracking-widest-plus uppercase text-gold-light/80 z-50 relative flex items-center justify-center gap-3">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-gold-champagne animate-pulse"></span>
+        <span>Auspicious Deepavali Edition 2026 · The Eternal Light of Mahalakshmi</span>
+        <span class="hidden md:inline text-gold-champagne/40">|</span>
+        <span class="hidden md:inline font-mono tracking-widest text-gold-champagne text-[11px]" id="muhuratClock">ASTROLOGICAL MUHURAT: 18:24 IST</span>
+    </div>
+
+    <!-- LUXURY ROLEX-STYLE NAVIGATION HEADER -->
+    <header class="sticky top-0 z-40 bg-rolex-deep/90 backdrop-blur-md border-b border-gold-champagne/20 transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- LEFT: ROLEX x INDIAN ROYAL CREST -->
+            <a href="#hero" class="flex items-center gap-3 group focus:outline-none">
+                <!-- Royal Diya Coronet Logo (Rolex-inspired Crown with Diya Flame) -->
+                <div class="relative w-10 h-10 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                    <svg viewBox="0 0 100 100" class="w-10 h-10 drop-shadow-[0_0_10px_rgba(223,183,108,0.5)]">
+                        <!-- Crown Base fluted ring -->
+                        <path d="M20 78 L80 78 L75 86 L25 86 Z" fill="url(#goldGrad)" />
+                        <!-- Five Coronet Spikes (Rolex Five-Point Crown reimagined as 5 Sacred Jyotis) -->
+                        <circle cx="20" cy="48" r="5" fill="url(#goldGrad)" />
+                        <circle cx="35" cy="36" r="5.5" fill="url(#goldGrad)" />
+                        <circle cx="50" cy="24" r="6.5" fill="url(#goldGrad)" />
+                        <circle cx="65" cy="36" r="5.5" fill="url(#goldGrad)" />
+                        <circle cx="80" cy="48" r="5" fill="url(#goldGrad)" />
+                        <!-- Crown Body -->
+                        <path d="M20 53 L35 41 L50 30 L65 41 L80 53 L75 75 L25 75 Z" fill="none" stroke="url(#goldGrad)" stroke-width="3" />
+                        <!-- Sacred Diya Base within Crown -->
+                        <path d="M30 68 C30 75 70 75 70 68 Z" fill="url(#goldGrad)" />
+                        <!-- Eternal Flame at Center -->
+                        <path d="M50 14 C44 26 40 38 50 48 C60 38 56 26 50 14 Z" fill="url(#flameGrad)" class="animate-pulse" />
+                        
+                        <defs>
+                            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f5e3b5"/>
+                                <stop offset="50%" stop-color="#dfb76c"/>
+                                <stop offset="100%" stop-color="#99752b"/>
+                            </linearGradient>
+                            <linearGradient id="flameGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#fff"/>
+                                <stop offset="40%" stop-color="#ffbe0b"/>
+                                <stop offset="80%" stop-color="#ff5400"/>
+                                <stop offset="100%" stop-color="#b21e35"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-cinzel text-base sm:text-lg font-bold tracking-widest text-gold-champagne group-hover:text-gold-light transition-colors">DEEPAVALI</span>
+                    <span class="text-[9px] tracking-super-wide text-stone-400 uppercase font-sans">Superlative Radiance</span>
+                </div>
+            </a>
+
+            <!-- CENTER: ROLEX FEATURES NAVIGATION (Desktop) -->
+            <nav class="hidden lg:flex items-center space-x-8 text-xs tracking-widest uppercase font-cinzel text-stone-300">
+                <a href="#hero" class="hover:text-gold-champagne transition-colors py-2 relative group">
+                    <span>The Radiance</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold-champagne transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#features" class="hover:text-gold-champagne transition-colors py-2 relative group">
+                    <span>Craft & Features</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold-champagne transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#interactive-diya" class="hover:text-gold-champagne transition-colors py-2 relative group">
+                    <span>Kindle Diya</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold-champagne transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#altar" class="hover:text-gold-champagne transition-colors py-2 relative group">
+                    <span>Temple of Light</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold-champagne transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#card-preview" class="hover:text-gold-champagne transition-colors py-2 relative group">
+                    <span>Your Greeting</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold-champagne transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+
+            <!-- RIGHT: AUDIO TOGGLE & PERSONALIZATION ACTION -->
+            <div class="flex items-center gap-3">
+                <!-- Ambient Audio Button (Rolex Acoustic Serenade) -->
+                <button id="soundToggle" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold-champagne/30 bg-rolex-dark/80 hover:bg-gold-champagne/10 text-gold-light text-xs transition-all duration-300" title="Toggle Divine Ambient Melody">
+                    <div class="w-3 h-3 flex items-center justify-between gap-[2px]">
+                        <span class="w-[2px] h-2 bg-gold-champagne sound-bar"></span>
+                        <span class="w-[2px] h-3 bg-gold-champagne sound-bar"></span>
+                        <span class="w-[2px] h-1.5 bg-gold-champagne sound-bar"></span>
+                    </div>
+                    <span id="soundText" class="text-[10px] tracking-wider uppercase font-cinzel">Ambience</span>
+                </button>
+
+                <!-- Personalize CTA Button -->
+                <button onclick="openPersonalizeModal()" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-cinzel tracking-widest font-semibold text-rolex-deep rounded-sm group bg-gradient-to-br from-gold-light via-gold-champagne to-gold-antique shadow-[0_0_15px_rgba(223,183,108,0.3)] hover:shadow-[0_0_25px_rgba(223,183,108,0.5)] transition-all duration-300">
+                    <span class="relative px-4 py-2 transition-all ease-in duration-200 bg-gradient-to-r from-gold-light via-gold-champagne to-gold-antique text-rolex-deep font-bold hover:brightness-110 flex items-center gap-2">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                        </svg>
+                        <span>PERSONALIZE</span>
+                    </span>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden p-2 text-gold-champagne hover:text-white" aria-label="Open menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-rolex-deep/95 border-b border-gold-champagne/20 px-6 py-6 space-y-4 font-cinzel text-xs tracking-widest uppercase">
+            <a href="#hero" class="block text-stone-300 hover:text-gold-champagne py-1 mobile-nav-link">The Radiance</a>
+            <a href="#features" class="block text-stone-300 hover:text-gold-champagne py-1 mobile-nav-link">Craft & Features</a>
+            <a href="#interactive-diya" class="block text-stone-300 hover:text-gold-champagne py-1 mobile-nav-link">Kindle Diya</a>
+            <a href="#altar" class="block text-stone-300 hover:text-gold-champagne py-1 mobile-nav-link">Temple of Light</a>
+            <a href="#card-preview" class="block text-stone-300 hover:text-gold-champagne py-1 mobile-nav-link">Your Greeting</a>
+            <div class="pt-4 border-t border-gold-champagne/20 flex gap-2">
+                <button onclick="openPersonalizeModal(); toggleMobileMenu();" class="w-full py-2.5 bg-gradient-to-r from-gold-light via-gold-champagne to-gold-antique text-rolex-deep font-bold text-center tracking-widest text-xs">
+                    CUSTOMIZE GREETING
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- =================================================================== -->
+        <!-- HERO SECTION: THE SUPERLATIVE RADIANCE (ROLEX EDITORIAL PROPORTIONS)-->
+        <!-- =================================================================== -->
+        <section id="hero" class="relative min-h-[92vh] flex items-center justify-center overflow-hidden py-16 px-4 bg-radial-rolex">
+            
+            <!-- Traditional Indian Jali Lattice Filigree Watermark Overlay -->
+            <div class="absolute inset-0 opacity-[0.06] pointer-events-none jali-pattern"></div>
+            
+            <!-- Ambient Golden Radial Glow in Center -->
+            <div class="absolute w-[600px] h-[600px] bg-gradient-to-br from-gold-champagne/15 via-diya-amber/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-20 max-w-5xl mx-auto text-center flex flex-col items-center">
+                
+                <!-- Rolex Style Crown Icon & Eyebrow -->
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="h-[1px] w-8 md:w-16 bg-gradient-to-r from-transparent to-gold-champagne"></span>
+                    <span class="text-xs md:text-sm font-cinzel tracking-super-wide text-gold-champagne uppercase font-semibold">
+                        A CELEBRATION OF SACRED TIME & ETERNAL LIGHT
+                    </span>
+                    <span class="h-[1px] w-8 md:w-16 bg-gradient-to-l from-transparent to-gold-champagne"></span>
+                </div>
+
+                <!-- Recipient Personalized Badge (Dynamic) -->
+                <div class="mb-3 inline-flex items-center gap-3 px-5 py-1.5 rounded-full bg-rolex-dark/80 border border-gold-champagne/30 backdrop-blur-md shadow-[0_0_20px_rgba(223,183,108,0.15)] animate-fade-in">
+                    <span class="text-diya-amber text-xs">✦</span>
+                    <span class="text-xs md:text-sm font-cinzel text-stone-300 tracking-wider">
+                        SPECIALLY CONSECRATED FOR:
+                    </span>
+                    <span id="heroRecipientPill" class="text-gold-light font-cinzel font-bold text-sm md:text-base border-b border-gold-champagne/50 pb-0.5">
+                        You & Your Beloved Family
+                    </span>
+                    <button onclick="openPersonalizeModal()" class="ml-1 text-[10px] text-gold-champagne/80 hover:text-white uppercase tracking-wider underline">Edit</button>
+                </div>
+
+                <!-- Instant Preset Quick Selectors -->
+                <div class="flex flex-wrap items-center justify-center gap-2 mb-6 text-[11px] font-cinzel tracking-wider text-stone-400">
+                    <span class="text-stone-500 text-[10px] uppercase">Quick Presets:</span>
+                    <button onclick="applyPreset('The Kapoor Family', 'prosperity')" class="px-2.5 py-1 rounded-full bg-rolex-dark/60 border border-gold-champagne/20 hover:border-gold-champagne hover:text-gold-light transition-all">
+                        The Kapoor Family
+                    </button>
+                    <button onclick="applyPreset('Pooja & Aarav', 'wisdom')" class="px-2.5 py-1 rounded-full bg-rolex-dark/60 border border-gold-champagne/20 hover:border-gold-champagne hover:text-gold-light transition-all">
+                        Pooja & Aarav
+                    </button>
+                    <button onclick="applyPreset('Respected Colleagues & Partners', 'victory')" class="px-2.5 py-1 rounded-full bg-rolex-dark/60 border border-gold-champagne/20 hover:border-gold-champagne hover:text-gold-light transition-all">
+                        Colleagues & Partners
+                    </button>
+                    <button onclick="applyPreset('Beloved Parents', 'health')" class="px-2.5 py-1 rounded-full bg-rolex-dark/60 border border-gold-champagne/20 hover:border-gold-champagne hover:text-gold-light transition-all">
+                        Beloved Parents
+                    </button>
+                </div>
+
+                <!-- Main Hero Headline: High-Craft Serif with Gold Foil Effect -->
+                <h1 class="font-garamond text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.08] text-stone-100 max-w-4xl tracking-tight mb-6">
+                    May Divine Radiance <br/>
+                    <span class="italic font-light text-gradient-gold">Illuminate Your Destiny</span>
+                </h1>
+
+                <!-- Sender Note (Dynamic) -->
+                <p id="heroSenderSub" class="font-script text-2xl sm:text-3xl md:text-4xl text-gold-champagne mb-8 font-normal drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+                    With warmest festive blessings from Biswajit
+                </p>
+
+                <!-- Rolex Editorial Craft Statement -->
+                <p class="max-w-2xl text-stone-300/90 text-sm sm:text-base md:text-lg font-light leading-relaxed mb-10 font-sans">
+                    Deepavali is not merely the passage of a night, but the supreme triumph of light over obscurity. Like the mastery of high watchmaking, each diya is an artisan masterpiece—kindling health, unyielding prosperity, and serene grace in your home.
+                </p>
+
+                <!-- CTA Actions: Rolex Dual Action -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                    <a href="#interactive-diya" class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-gold-light via-gold-champagne to-gold-antique text-rolex-deep font-cinzel font-bold tracking-widest text-xs uppercase shadow-lg shadow-gold-champagne/20 hover:brightness-110 hover:shadow-gold-champagne/40 transition-all duration-300 text-center flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4 text-rolex-deep" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C12 2 7 9 7 14C7 16.7614 9.23858 19 12 19C14.7614 19 17 16.7614 17 14C17 9 12 2 12 2Z"/>
+                        </svg>
+                        <span>KINDLE THE SACRED JYOTI</span>
+                    </a>
+
+                    <button onclick="openPersonalizeModal()" class="w-full sm:w-auto px-8 py-3.5 border border-gold-champagne/50 hover:border-gold-champagne text-gold-light hover:text-white font-cinzel tracking-widest text-xs uppercase bg-rolex-deep/60 backdrop-blur-sm transition-all duration-300 text-center flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4 text-gold-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                        </svg>
+                        <span>CRAFT & SHARE GREETING</span>
+                    </button>
+                </div>
+
+                <!-- Downward Scroll Indicator -->
+                <div class="mt-16 flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity">
+                    <span class="text-[10px] tracking-widest-plus text-stone-400 uppercase font-cinzel mb-2">Explore The Features</span>
+                    <a href="#features" class="w-6 h-10 border border-gold-champagne/40 rounded-full flex items-start justify-center p-1" aria-label="Scroll to features">
+                        <span class="w-1.5 h-2.5 bg-gold-champagne rounded-full animate-bounce"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- THE PERSONALISED DEDICATION BANNER (EDITORIAL CALLIGRAPHY)         -->
+        <!-- =================================================================== -->
+        <section class="border-y border-gold-champagne/20 bg-gradient-to-r from-rolex-deep via-velvet-card to-rolex-deep py-12 px-4 relative overflow-hidden">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+                
+                <div class="flex items-center gap-6 text-left">
+                    <!-- Grand Diya Emblem -->
+                    <div class="w-16 h-16 rounded-full border border-gold-champagne/30 bg-rolex-dark/80 flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(223,183,108,0.2)]">
+                        <svg class="w-9 h-9 text-gold-champagne animate-pulse" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C12 2 7 8 7 13C7 15.76 9.24 18 12 18C14.76 18 17 15.76 17 13C17 8 12 2 12 2Z" fill="url(#bannerFlame)"/>
+                            <path d="M4 17C4 19.5 7.5 21 12 21C16.5 21 20 19.5 20 17L4 17Z" fill="url(#bannerGold)"/>
+                            <defs>
+                                <linearGradient id="bannerFlame" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#fff"/>
+                                    <stop offset="50%" stop-color="#ffbe0b"/>
+                                    <stop offset="100%" stop-color="#ff5400"/>
+                                </linearGradient>
+                                <linearGradient id="bannerGold" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#f5e3b5"/>
+                                    <stop offset="100%" stop-color="#99752b"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <div>
+                        <div class="text-[11px] font-cinzel uppercase tracking-widest text-gold-champagne">Personal Consecration</div>
+                        <h2 class="font-garamond text-2xl sm:text-3xl text-stone-100 font-normal">
+                            To <span id="bannerRecipient" class="text-gold-light font-semibold border-b border-gold-champagne/40 pb-0.5">Esteemed Recipient</span>,
+                        </h2>
+                        <p id="bannerBlessingText" class="text-stone-300 text-sm font-sans mt-1 max-w-xl">
+                            "May Lakshmi enter your threshold with golden steps, bringing boundless wealth, serene health, and everlasting brilliance to you and your lineage."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 shrink-0">
+                    <button onclick="copyPersonalizedGreeting()" id="copyBannerBtn" class="px-5 py-2.5 rounded-sm border border-gold-champagne/40 bg-rolex-dark text-gold-light hover:bg-gold-champagne/15 text-xs font-cinzel tracking-wider uppercase transition-all duration-300 flex items-center gap-2">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                        </svg>
+                        <span>Copy Link</span>
+                    </button>
+                    <button onclick="shareOnWhatsApp()" class="px-5 py-2.5 rounded-sm bg-[#25D366] text-white hover:brightness-110 text-xs font-cinzel font-bold tracking-wider uppercase transition-all duration-300 flex items-center gap-2 shadow-[0_0_15px_rgba(37,211,102,0.3)]">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.954 2.802.955h.005c3.18 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.766c0 5.519-4.481 10-10 10-1.748 0-3.391-.453-4.832-1.246l-5.168 1.354 1.381-5.048c-.902-1.503-1.381-3.23-1.381-5.06 0-5.519 4.481-10 10-10 5.519 0 10 4.481 10 10z"/>
+                        </svg>
+                        <span>WhatsApp</span>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- ROLEX WATCHMAKING FEATURES: THE 5 PILLARS OF AUSPICIOUS CRAFT      -->
+        <!-- =================================================================== -->
+        <section id="features" class="py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+            
+            <!-- Section Header in Rolex Editorial Design -->
+            <div class="text-center max-w-3xl mx-auto mb-24">
+                <div class="text-gold-champagne font-cinzel text-xs tracking-super-wide uppercase mb-3 font-semibold">
+                    ROLEX WATCHMAKING × SACRED INDIAN TRADITION
+                </div>
+                <h2 class="font-garamond text-4xl sm:text-5xl md:text-6xl text-stone-100 font-normal leading-tight mb-6">
+                    The Five Pillars of <br/>
+                    <span class="italic text-gradient-gold">Eternal Illumination</span>
+                </h2>
+                <div class="w-20 h-[1px] bg-gradient-to-r from-transparent via-gold-champagne to-transparent mx-auto mb-6"></div>
+                <p class="text-stone-300 font-light text-base sm:text-lg leading-relaxed">
+                    Just as every Rolex chronometer is sculpted with unswerving precision and eternal alloys, the ancient rituals of Deepavali were engineered to harmonise cosmic energy, elevate the spirit, and welcome Lakshmi into the sanctuaries of our lives.
+                </p>
+            </div>
+
+            <!-- FEATURE 01: CHRONOMETRIC PRECISION (THE SACRED MUHURAT) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-32 border-b border-gold-champagne/15 pb-24">
+                <!-- Text / Technical Specs Column -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-rolex-dark border border-gold-champagne/30 text-gold-champagne text-[11px] font-mono tracking-widest uppercase">
+                        FEATURE 01 · CHRONOMETRY OF THE STARS
+                    </div>
+                    
+                    <h3 class="font-garamond text-3xl sm:text-4xl md:text-5xl text-stone-100 leading-snug">
+                        The Sacred Muhurat: <br/>
+                        <span class="italic text-gradient-gold">Temporal Alignment of Lakshmi</span>
+                    </h3>
+                    
+                    <p class="text-stone-300 font-sans text-base leading-relaxed">
+                        In haute horlogerie, accuracy is measured to the thousandth of a second. In Vedic science, the Diwali Muhurat represents the exact celestial confluence when the constellation of Swati and the new moon of Kartik create an auspicious gravitational harmony.
+                    </p>
+
+                    <!-- Rolex-style technical spec badges -->
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 bg-rolex-deep/80 border border-gold-champagne/20 rounded-sm">
+                            <div class="text-gold-champagne font-cinzel text-xs tracking-widest uppercase mb-1">SUPERLATIVE PRECISION</div>
+                            <div class="text-stone-200 text-lg font-garamond font-bold">Amavasya Tithi</div>
+                            <div class="text-stone-400 text-xs mt-1">Astronomical alignment calibrated for abundance.</div>
+                        </div>
+                        <div class="p-4 bg-rolex-deep/80 border border-gold-champagne/20 rounded-sm">
+                            <div class="text-gold-champagne font-cinzel text-xs tracking-widest uppercase mb-1">STELLAR TOLERANCE</div>
+                            <div class="text-stone-200 text-lg font-garamond font-bold">±0 Seconds</div>
+                            <div class="text-stone-400 text-xs mt-1">Cosmic energy synchronized with devotion.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Showcase Column: Astrolabe & Celestial Mandala -->
+                <div class="lg:col-span-6">
+                    <div class="relative group p-1 bg-gradient-to-br from-gold-champagne/30 via-rolex-emerald/20 to-gold-antique/30 rounded-lg shadow-2xl overflow-hidden">
+                        <div class="relative bg-velvet-card p-8 rounded-lg min-h-[380px] flex flex-col items-center justify-center text-center overflow-hidden">
+                            <!-- Rotating Sacred Zodiac Mandala -->
+                            <div class="w-64 h-64 border border-gold-champagne/20 rounded-full flex items-center justify-center animate-spin-slow relative">
+                                <div class="w-52 h-52 border border-dashed border-gold-champagne/40 rounded-full flex items-center justify-center">
+                                    <div class="w-36 h-36 border border-gold-champagne/30 rounded-full flex items-center justify-center">
+                                        <!-- Astrolabe Center Core -->
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-gold-deep via-gold-champagne to-gold-light shadow-[0_0_25px_rgba(223,183,108,0.8)] flex items-center justify-center">
+                                            <span class="text-rolex-deep font-bold text-xs">ॐ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Star markers -->
+                                <span class="absolute top-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-gold-champagne rounded-full shadow-[0_0_8px_#dfb76c]"></span>
+                                <span class="absolute bottom-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-gold-champagne rounded-full shadow-[0_0_8px_#dfb76c]"></span>
+                                <span class="absolute left-2 top-1/2 -translate-y-1/2 w-2 h-2 bg-gold-champagne rounded-full shadow-[0_0_8px_#dfb76c]"></span>
+                                <span class="absolute right-2 top-1/2 -translate-y-1/2 w-2 h-2 bg-gold-champagne rounded-full shadow-[0_0_8px_#dfb76c]"></span>
+                            </div>
+
+                            <div class="mt-6 z-10">
+                                <span class="text-xs font-cinzel text-gold-champagne tracking-widest uppercase">The Cosmic Horology</span>
+                                <div class="text-stone-300 text-sm mt-1">Kartik Amavasya · Pradosh Kaal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEATURE 02: 24-KARAT KUNDAN FILIGREE (ROLEX NOBLE METALS) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-32 border-b border-gold-champagne/15 pb-24">
+                
+                <!-- Visual Showcase (Left on desktop) -->
+                <div class="lg:col-span-6 order-2 lg:order-1">
+                    <div class="relative group p-1 bg-gradient-to-br from-gold-champagne/30 via-rolex-emerald/20 to-gold-antique/30 rounded-lg shadow-2xl overflow-hidden">
+                        <div class="relative bg-velvet-card p-8 rounded-lg min-h-[380px] flex flex-col items-center justify-center text-center overflow-hidden">
+                            <!-- Golden Jaali Lattice with Indian Royal Archway -->
+                            <div class="w-full max-w-sm h-72 border-2 border-gold-champagne/40 rounded-t-full p-4 relative flex flex-col items-center justify-center bg-gradient-to-b from-rolex-deep to-velvet-card">
+                                <div class="w-full h-full border border-gold-champagne/20 rounded-t-full flex items-center justify-center p-6 relative">
+                                    <div class="absolute inset-0 jali-pattern opacity-15"></div>
+                                    <div class="text-center z-10">
+                                        <div class="font-royal text-5xl sm:text-6xl text-gradient-gold mb-2">24K</div>
+                                        <div class="font-cinzel text-xs tracking-super-wide text-gold-light uppercase">Pure Kundan Filigree</div>
+                                        <div class="text-[11px] text-stone-400 mt-2 font-mono">ALLOY SPEC: Au 999.9 · IMPERMEABLE TO TARNISH</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-cinzel text-gold-champagne tracking-widest uppercase mt-4">The Royal Goldsmithing of Jaipur & Kashi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Column -->
+                <div class="lg:col-span-6 space-y-6 order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-rolex-dark border border-gold-champagne/30 text-gold-champagne text-[11px] font-mono tracking-widest uppercase">
+                        FEATURE 02 · NOBLE MATERIALS & GOLDSMITHING
+                    </div>
+                    
+                    <h3 class="font-garamond text-3xl sm:text-4xl md:text-5xl text-stone-100 leading-snug">
+                        The Incorruptible Gold: <br/>
+                        <span class="italic text-gradient-gold">Lakshmi's Sacred Metal</span>
+                    </h3>
+                    
+                    <p class="text-stone-300 font-sans text-base leading-relaxed">
+                        Rolex commands its own foundry to cast proprietary gold alloys. In the royal heritage of India, gold represents the essence of Agni (fire) and Mahalakshmi. Hand-chased with microscopic filigree, each motif captures the radiance of the sun, untainted by time.
+                    </p>
+
+                    <!-- Rolex-style technical spec badges -->
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 bg-rolex-deep/80 border border-gold-champagne/20 rounded-sm">
+                            <div class="text-gold-champagne font-cinzel text-xs tracking-widest uppercase mb-1">PURITY RATING</div>
+                            <div class="text-stone-200 text-lg font-garamond font-bold">24-Karat Eternal</div>
+                            <div class="text-stone-400 text-xs mt-1">Conducted by royal artisans across generations.</div>
+                        </div>
+                        <div class="p-4 bg-rolex-deep/80 border border-gold-champagne/20 rounded-sm">
+                            <div class="text-gold-champagne font-cinzel text-xs tracking-widest uppercase mb-1">RESILIENCE</div>
+                            <div class="text-stone-200 text-lg font-garamond font-bold">Indomitable</div>
+                            <div class="text-stone-400 text-xs mt-1">Symbolizes everlasting wealth and self-luminosity.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FEATURE 03: THE SACRED JYOTI (ENDURING LUMINESCENCE / OYSTER CASE EQUIVALENT) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-32 border-b border-gold-champagne/15 pb-24">
+                
+                <!-- Text Column -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-rolex-dark border border-gold-champagne/30 text-gold-champagne text-[11px] font-mono tracking-widest uppercase">
+                        FEATURE 03 · THE ETERNAL LUMINESCENCE
+                    </div>
+                    
+                    <h3 class="font-garamond text-3xl sm:text-4xl md:text-5xl text-stone-100 leading-snug">
+                        The Sacred Jyoti: <br/>
+                        <span class="italic text-gradient-gold">Unconquerable by Darkness</span>
+                    </h3>
+                    
+                    <p class="text-stone-300 font-sans text-base leading-relaxed">
+                        Like the Oyster case which preserves the heart of a Rolex in extreme depths, the clay diya cradles the sacred fire of knowledge. Formed from mother earth, filled with pure golden ghee, and crowned with a single cotton wick, its luminescence dispels all ignorance.
+                    </p>
+
+                    <!-- Rolex-style technical spec badges -->
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 bg-rolex-deep/80 border border-gold-champagne/20 rounded-sm">
+                            <div class="text-gold-champagne font-cinzel text-xs tracking-widest uppercase mb-1">FUEL OF PURITY</div>
+                            <div class="text-stone-200 text-lg font-garamond font-bold">Desi Cow Ghee</div>
+                            <div class="text-stone-400 text-xs mt-1">Purifies the atmospheric prana upon ignition.</div>
+                        </div>
+                        <div class="p-4 bg-rolex-deep/80 border border-gold-champagne/20 rounded-sm">
+                            <div class="text-gold-champagne font-cinzel text-xs tracking-widest uppercase mb-1">LUMEN SPECTRUM</div>
+                            <div class="text-stone-200 text-lg font-garamond font-bold">Warm Amber 1800K</div>
+                            <div class="text-stone-400 text-xs mt-1">Calibrated to induce supreme peace and joy.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Showcase Column: The Golden Diya Luminescence -->
+                <div class="lg:col-span-6">
+                    <div class="relative group p-1 bg-gradient-to-br from-gold-champagne/30 via-rolex-emerald/20 to-gold-antique/30 rounded-lg shadow-2xl overflow-hidden">
+                        <div class="relative bg-velvet-card p-8 rounded-lg min-h-[380px] flex flex-col items-center justify-center text-center overflow-hidden">
+                            <!-- Visual Diya with Pulsing Aureole -->
+                            <div class="relative w-48 h-48 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gold-champagne/10 rounded-full blur-2xl animate-pulse"></div>
+                                <div class="absolute w-28 h-28 bg-diya-flame/20 rounded-full blur-xl"></div>
+                                
+                                <!-- Detailed SVG Diya -->
+                                <svg class="w-36 h-36 relative z-10 drop-shadow-[0_0_25px_rgba(255,159,28,0.6)]" viewBox="0 0 100 100">
+                                    <!-- Sacred Diya Base -->
+                                    <path d="M15 65 Q50 95 85 65 Q80 75 50 82 Q20 75 15 65 Z" fill="url(#diyaBody)"/>
+                                    <path d="M15 65 C25 60 75 60 85 65 C75 70 25 70 15 65 Z" fill="#99752b"/>
+                                    <!-- Dancing Flame -->
+                                    <path d="M50 20 C42 35 38 48 50 58 C62 48 58 35 50 20 Z" fill="url(#diyaFlame)" class="origin-bottom animate-flame-flicker"/>
+                                    <path d="M50 32 C46 40 44 48 50 54 C56 48 54 40 50 32 Z" fill="#fff" class="origin-bottom animate-pulse"/>
+                                    
+                                    <defs>
+                                        <linearGradient id="diyaBody" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0%" stop-color="#dfb76c"/>
+                                            <stop offset="50%" stop-color="#b38728"/>
+                                            <stop offset="100%" stop-color="#54370a"/>
+                                        </linearGradient>
+                                        <linearGradient id="diyaFlame" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#fff"/>
+                                            <stop offset="30%" stop-color="#ffbe0b"/>
+                                            <stop offset="70%" stop-color="#ff5400"/>
+                                            <stop offset="100%" stop-color="#b21e35"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-cinzel text-gold-champagne tracking-widest uppercase mt-4">The Imperishable Flame of Hope</span>
+                            <div class="text-[11px] text-stone-400 mt-1">Light is self-sustaining; darkness has no source.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FEATURE 04: GEOMETRIC RANGOLI (ROLEX DIAL GUILLOCHÉ & ARCHITECTURAL HARMONY) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-32 border-b border-gold-champagne/15 pb-24">
+                
+                <!-- Visual Showcase (Left on desktop) -->
+                <div class="lg:col-span-6 order-2 lg:order-1">
+                    <div class="relative group p-1 bg-gradient-to-br from-gold-champagne/30 via-rolex-emerald/20 to-gold-antique/30 rounded-lg shadow-2xl overflow-hidden">
+                        <div class="relative bg-velvet-card p-8 rounded-lg min-h-[380px] flex flex-col items-center justify-center text-center overflow-hidden">
+                            <!-- Geometric Guilloche Rangoli Mandala -->
+                            <div class="relative w-64 h-64 flex items-center justify-center">
+                                <svg class="w-60 h-60 text-gold-champagne animate-spin-reverse" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                                    <!-- Concentric Petal Rotations -->
+                                    <circle cx="50" cy="50" r="45" stroke-width="0.5" stroke-dasharray="2 2"/>
+                                    <circle cx="50" cy="50" r="38" stroke-width="0.75"/>
+                                    <circle cx="50" cy="50" r="26" stroke-width="0.5"/>
+                                    <!-- 8 Petals of Lakshmi -->
+                                    <path d="M50 5 Q60 25 50 45 Q40 25 50 5 Z" stroke-width="0.8"/>
+                                    <path d="M50 95 Q60 75 50 55 Q40 75 50 95 Z" stroke-width="0.8"/>
+                                    <path d="M5 50 Q25 60 45 50 Q25 40 5 50 Z" stroke-width="0.8"/>
+                                    <path d="M95 50 Q75 60 55 50 Q75 40 95 50 Z" stroke-width="0.8"/>
+                                    <path d="M18 18 Q38 32 46 46 Q32 38 18 18 Z" stroke-width="0.8"/>
+                                    <path d="M82 82 Q62 68 54 54 Q68 62 82 82 Z" stroke-width="0.8"/>
+                                    <path d="M18 82 Q32 62 46 54 Q38 68 18 82 Z" stroke-width="0.8"/>
+                                    <path d="M82 18 Q68 38 54 46 Q62 32 82 18 Z" stroke-width="0.8"/>
+                                </svg>
+                                <!-- Central Gemstone -->
+                                <div class="absolute w-6 h-6 rounded-full bg-gradient-to-tr from-gold-deep via-gold-champagne to-white shadow-[0_0_15px_#dfb76c]"></div>
+                            </div>
+                            <span class="text-xs font-cinzel text-gold-champagne tracking-widest uppercase mt-4">The Guilloché of Vedic Geometry</span>
+                            <div class="text-[11px] text-stone-400 mt-1">Ashta-Lakshmi Yantra: Radiating Eightfold Prosperity</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Column -->
+                <div class="lg:col-span-6 space-y-6 order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-rolex-dark border border-gold-champagne/30 text-gold-champagne text-[11px] font-mono tracking-widest uppercase">
+                        FEATURE 04 · SACRED GEOMETRY & ARCHITECTURE
+                    </div>
+                    
+                    <h3 class="font-garamond text-3xl sm:text-4xl md:text-5xl text-stone-100 leading-snug">
+                        The Sacred Rangoli: <br/>
+                        <span class="italic text-gradient-gold">Threshold of Divine Harmony</span>
+                    </h3>
+                    
+                    <p class="text-stone-300 font-sans text-base leading-relaxed">
+                        Rolex dials are masterpieces of Guilloché engine-turning, where laser-cut micro-patterns reflect light at every angle. In royal Indian homes, the Rangoli is drawn at the threshold using sacred minerals, marigolds, and rice flour—a sacred gateway calibrated to welcome the divine footprint of Lakshmi.
+                    </p>
+
+                    <!-- Rolex-style technical spec badges -->
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 bg-rolex-deep/80 border border-gold-champagne/20 rounded-sm">
+                            <div class="text-gold-champagne font-cinzel text-xs tracking-widest uppercase mb-1">SYMMETRIC BALANCE</div>
+                            <div class="text-stone-200 text-lg font-garamond font-bold">Golden Ratio (1:1.618)</div>
+                            <div class="text-stone-400 text-xs mt-1">Calms the mind and channels positive energy.</div>
+                        </div>
+                        <div class="p-4 bg-rolex-deep/80 border border-gold-champagne/20 rounded-sm">
+                            <div class="text-gold-champagne font-cinzel text-xs tracking-widest uppercase mb-1">INVITATION SACRED</div>
+                            <div class="text-stone-200 text-lg font-garamond font-bold">Swagatam Lakshmi</div>
+                            <div class="text-stone-400 text-xs mt-1">Honouring guests as sacred embodiments of the Divine.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FEATURE 05: THE CELESTIAL SAMVAAD (THE HERITAGE OF LIGHT & JOY) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Text Column -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-rolex-dark border border-gold-champagne/30 text-gold-champagne text-[11px] font-mono tracking-widest uppercase">
+                        FEATURE 05 · SUPERLATIVE HERITAGE & JOY
+                    </div>
+                    
+                    <h3 class="font-garamond text-3xl sm:text-4xl md:text-5xl text-stone-100 leading-snug">
+                        The Celestial Samvaad: <br/>
+                        <span class="italic text-gradient-gold">A Heritage Outlasting Empires</span>
+                    </h3>
+                    
+                    <p class="text-stone-300 font-sans text-base leading-relaxed">
+                        Like the Rolex Superlative Chronometer certification which subjects each timepiece to the most uncompromising criteria, the celebration of Deepavali has stood the crucible of five millennia. Exchanging sweets (Mithai), offering respects to elders, and illuminating the night sky with fireworks—it is a sacred treaty of unconditional benevolence.
+                    </p>
+
+                    <!-- Rolex-style technical spec badges -->
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 bg-rolex-deep/80 border border-gold-champagne/20 rounded-sm">
+                            <div class="text-gold-champagne font-cinzel text-xs tracking-widest uppercase mb-1">PROVENANCE</div>
+                            <div class="text-stone-200 text-lg font-garamond font-bold">5,000+ Years</div>
+                            <div class="text-stone-400 text-xs mt-1">An unbroken lineage of celebration across generations.</div>
+                        </div>
+                        <div class="p-4 bg-rolex-deep/80 border border-gold-champagne/20 rounded-sm">
+                            <div class="text-gold-champagne font-cinzel text-xs tracking-widest uppercase mb-1">UNIVERSAL SPIRIT</div>
+                            <div class="text-stone-200 text-lg font-garamond font-bold">Vasudhaiva Kutumbakam</div>
+                            <div class="text-stone-400 text-xs mt-1">"The whole world is one single family."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Showcase Column: Celestial Fireworks & Joy -->
+                <div class="lg:col-span-6">
+                    <div class="relative group p-1 bg-gradient-to-br from-gold-champagne/30 via-rolex-emerald/20 to-gold-antique/30 rounded-lg shadow-2xl overflow-hidden">
+                        <div class="relative bg-velvet-card p-8 rounded-lg min-h-[380px] flex flex-col items-center justify-center text-center overflow-hidden">
+                            <!-- Golden Starburst / Celestial Phuljhadi Graphic -->
+                            <div class="relative w-64 h-64 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gold-champagne/10 rounded-full blur-2xl animate-pulse"></div>
+                                <svg class="w-56 h-56 text-gold-champagne animate-pulse" viewBox="0 0 100 100">
+                                    <!-- Starburst Rays -->
+                                    <line x1="50" y1="10" x2="50" y2="90" stroke="url(#burstGold)" stroke-width="1.5"/>
+                                    <line x1="10" y1="50" x2="90" y2="50" stroke="url(#burstGold)" stroke-width="1.5"/>
+                                    <line x1="22" y1="22" x2="78" y2="78" stroke="url(#burstGold)" stroke-width="1.2"/>
+                                    <line x1="78" y1="22" x2="22" y2="78" stroke="url(#burstGold)" stroke-width="1.2"/>
+                                    <line x1="35" y1="14" x2="65" y2="86" stroke="url(#burstGold)" stroke-width="0.8" stroke-dasharray="2 2"/>
+                                    <line x1="14" y1="35" x2="86" y2="65" stroke="url(#burstGold)" stroke-width="0.8" stroke-dasharray="2 2"/>
+                                    <!-- Concentric Halo -->
+                                    <circle cx="50" cy="50" r="28" fill="none" stroke="#dfb76c" stroke-width="1"/>
+                                    <circle cx="50" cy="50" r="14" fill="#dfb76c" fill-opacity="0.3"/>
+                                    <circle cx="50" cy="50" r="5" fill="#fff"/>
+                                    
+                                    <defs>
+                                        <linearGradient id="burstGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#fff"/>
+                                            <stop offset="50%" stop-color="#dfb76c"/>
+                                            <stop offset="100%" stop-color="#825c16"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-cinzel text-gold-champagne tracking-widest uppercase mt-4">The Spark of Universal Fraternity</span>
+                            <div class="text-[11px] text-stone-400 mt-1">Conquering darkness with affection and boundless goodwill.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- INTERACTIVE CENTERPIECE: KINDLE THE SACRED DIYAS                   -->
+        <!-- =================================================================== -->
+        <section id="interactive-diya" class="py-24 px-4 bg-gradient-to-b from-rolex-deep via-velvet-card to-rolex-deep border-y border-gold-champagne/20 relative overflow-hidden">
+            
+            <div class="max-w-5xl mx-auto text-center relative z-20">
+                <div class="text-gold-champagne font-cinzel text-xs tracking-super-wide uppercase mb-3 font-semibold">
+                    INTERACTIVE RITUAL OF LIGHT
+                </div>
+                
+                <h2 class="font-garamond text-3xl sm:text-5xl md:text-6xl text-stone-100 font-normal leading-tight mb-4">
+                    Light The Five Sacred Diyas <br/>
+                    <span class="italic text-gradient-gold">For <span id="interactiveRecipientName">Your Beloved Ones</span></span>
+                </h2>
+                
+                <p class="text-stone-300 font-light text-sm sm:text-base max-w-2xl mx-auto mb-12">
+                    Click each sacred diya below to kindle its golden flame. With every flame ignited, unleash a cosmic wave of health, wealth, peace, wisdom, and boundless success.
+                </p>
+
+                <!-- Interactive 5 Diyas Altar -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-4xl mx-auto mb-12">
+                    
+                    <!-- Diya 1: Wealth (Lakshmi) -->
+                    <div onclick="toggleDiya(1)" id="diyaSlot1" class="diya-card p-6 rounded-lg bg-rolex-dark/80 border border-gold-champagne/30 cursor-pointer hover:border-gold-champagne transition-all duration-300 flex flex-col items-center group relative">
+                        <div class="w-16 h-20 flex items-center justify-center relative mb-4">
+                            <!-- Flame -->
+                            <div id="flame1" class="diya-flame opacity-0 transition-opacity duration-500 absolute -top-2 w-6 h-10 bg-gradient-to-t from-diya-flame via-diya-amber to-white rounded-full blur-[1px] animate-flame-flicker shadow-[0_0_20px_#ffbe0b]"></div>
+                            <!-- Diya Vessel -->
+                            <svg class="w-14 h-14 mt-4 text-gold-champagne group-hover:scale-105 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 15C4 18 7.5 20 12 20C16.5 20 20 18 20 15L4 15Z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs font-cinzel font-bold text-stone-200 group-hover:text-gold-light">DHANA</span>
+                        <span class="text-[10px] text-stone-400 uppercase tracking-widest mt-1">Prosperity</span>
+                        <span id="diyaStatus1" class="text-[9px] font-mono text-gold-champagne/60 mt-2 uppercase tracking-widest">Click to Ignite</span>
+                    </div>
+
+                    <!-- Diya 2: Health (Aarogya) -->
+                    <div onclick="toggleDiya(2)" id="diyaSlot2" class="diya-card p-6 rounded-lg bg-rolex-dark/80 border border-gold-champagne/30 cursor-pointer hover:border-gold-champagne transition-all duration-300 flex flex-col items-center group relative">
+                        <div class="w-16 h-20 flex items-center justify-center relative mb-4">
+                            <div id="flame2" class="diya-flame opacity-0 transition-opacity duration-500 absolute -top-2 w-6 h-10 bg-gradient-to-t from-diya-flame via-diya-amber to-white rounded-full blur-[1px] animate-flame-flicker shadow-[0_0_20px_#ffbe0b]"></div>
+                            <svg class="w-14 h-14 mt-4 text-gold-champagne group-hover:scale-105 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 15C4 18 7.5 20 12 20C16.5 20 20 18 20 15L4 15Z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs font-cinzel font-bold text-stone-200 group-hover:text-gold-light">AAROGYA</span>
+                        <span class="text-[10px] text-stone-400 uppercase tracking-widest mt-1">Radiant Health</span>
+                        <span id="diyaStatus2" class="text-[9px] font-mono text-gold-champagne/60 mt-2 uppercase tracking-widest">Click to Ignite</span>
+                    </div>
+
+                    <!-- Diya 3: Central Master Diya (Siddhi - Success) -->
+                    <div onclick="toggleDiya(3)" id="diyaSlot3" class="diya-card p-6 rounded-lg bg-gradient-to-b from-rolex-primary/40 to-rolex-dark border-2 border-gold-champagne cursor-pointer shadow-[0_0_25px_rgba(223,183,108,0.25)] transition-all duration-300 flex flex-col items-center group relative scale-105">
+                        <div class="w-20 h-24 flex items-center justify-center relative mb-3">
+                            <div id="flame3" class="diya-flame opacity-0 transition-opacity duration-500 absolute -top-3 w-8 h-12 bg-gradient-to-t from-diya-ruby via-diya-amber to-white rounded-full blur-[1px] animate-flame-flicker shadow-[0_0_30px_#ffbe0b]"></div>
+                            <svg class="w-16 h-16 mt-4 text-gold-light group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 15C4 18 7.5 20 12 20C16.5 20 20 18 20 15L4 15Z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs font-cinzel font-bold text-gold-light">SIDDHI</span>
+                        <span class="text-[10px] text-stone-300 uppercase tracking-widest mt-1">Supreme Mastery</span>
+                        <span id="diyaStatus3" class="text-[9px] font-mono text-gold-champagne mt-2 uppercase tracking-widest font-bold">Master Jyoti</span>
+                    </div>
+
+                    <!-- Diya 4: Wisdom (Vidya) -->
+                    <div onclick="toggleDiya(4)" id="diyaSlot4" class="diya-card p-6 rounded-lg bg-rolex-dark/80 border border-gold-champagne/30 cursor-pointer hover:border-gold-champagne transition-all duration-300 flex flex-col items-center group relative">
+                        <div class="w-16 h-20 flex items-center justify-center relative mb-4">
+                            <div id="flame4" class="diya-flame opacity-0 transition-opacity duration-500 absolute -top-2 w-6 h-10 bg-gradient-to-t from-diya-flame via-diya-amber to-white rounded-full blur-[1px] animate-flame-flicker shadow-[0_0_20px_#ffbe0b]"></div>
+                            <svg class="w-14 h-14 mt-4 text-gold-champagne group-hover:scale-105 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 15C4 18 7.5 20 12 20C16.5 20 20 18 20 15L4 15Z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs font-cinzel font-bold text-stone-200 group-hover:text-gold-light">VIDYA</span>
+                        <span class="text-[10px] text-stone-400 uppercase tracking-widest mt-1">Divine Wisdom</span>
+                        <span id="diyaStatus4" class="text-[9px] font-mono text-gold-champagne/60 mt-2 uppercase tracking-widest">Click to Ignite</span>
+                    </div>
+
+                    <!-- Diya 5: Peace (Shanti) -->
+                    <div onclick="toggleDiya(5)" id="diyaSlot5" class="diya-card p-6 rounded-lg bg-rolex-dark/80 border border-gold-champagne/30 cursor-pointer hover:border-gold-champagne transition-all duration-300 flex flex-col items-center group relative">
+                        <div class="w-16 h-20 flex items-center justify-center relative mb-4">
+                            <div id="flame5" class="diya-flame opacity-0 transition-opacity duration-500 absolute -top-2 w-6 h-10 bg-gradient-to-t from-diya-flame via-diya-amber to-white rounded-full blur-[1px] animate-flame-flicker shadow-[0_0_20px_#ffbe0b]"></div>
+                            <svg class="w-14 h-14 mt-4 text-gold-champagne group-hover:scale-105 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 15C4 18 7.5 20 12 20C16.5 20 20 18 20 15L4 15Z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs font-cinzel font-bold text-stone-200 group-hover:text-gold-light">SHANTI</span>
+                        <span class="text-[10px] text-stone-400 uppercase tracking-widest mt-1">Eternal Peace</span>
+                        <span id="diyaStatus5" class="text-[9px] font-mono text-gold-champagne/60 mt-2 uppercase tracking-widest">Click to Ignite</span>
+                    </div>
+
+                </div>
+
+                <!-- Ignition Master Controls -->
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <button onclick="igniteAllDiyas()" class="px-6 py-2.5 bg-gradient-to-r from-gold-light via-gold-champagne to-gold-antique text-rolex-deep font-cinzel font-bold text-xs uppercase tracking-widest hover:brightness-110 shadow-lg shadow-gold-champagne/20 transition-all flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.477.859h4z"/>
+                        </svg>
+                        <span>KINDLE ALL FIVE JYOTIS</span>
+                    </button>
+                    <button onclick="resetDiyas()" class="px-6 py-2.5 border border-stone-600 hover:border-gold-champagne text-stone-300 text-xs font-cinzel uppercase tracking-widest transition-all">
+                        Reset Altar
+                    </button>
+                </div>
+
+                <!-- Altar Blessing Message (Appears when all 5 lit) -->
+                <div id="fullAltarBlessing" class="hidden mt-8 p-6 max-w-xl mx-auto rounded-lg bg-rolex-dark border border-gold-champagne/40 shadow-[0_0_30px_rgba(223,183,108,0.3)] animate-fade-in">
+                    <div class="text-gold-light font-royal text-2xl mb-1">ॐ महालक्ष्म्यै नमः</div>
+                    <div class="text-stone-200 font-garamond text-lg italic">
+                        "The fivefold light shines radiant for <span id="altarRecipientSpan" class="text-gold-champagne font-bold">You</span>. May sorrow perish, and may infinite grace shelter your home forever."
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- TEMPLE OF 108 LIGHTS: COMMUNITY KINDLING ACCROSS THE GLOBE        -->
+        <!-- =================================================================== -->
+        <section id="altar" class="py-24 px-4 max-w-6xl mx-auto text-center relative">
+            <div class="text-gold-champagne font-cinzel text-xs tracking-super-wide uppercase mb-3 font-semibold">
+                GLOBAL SANCTUM OF LIGHT
+            </div>
+            
+            <h2 class="font-garamond text-3xl sm:text-5xl text-stone-100 font-normal leading-tight mb-4">
+                The Temple of 108 Sacred Lamps
+            </h2>
+            
+            <p class="text-stone-300 font-light text-sm sm:text-base max-w-xl mx-auto mb-8">
+                Join thousands of well-wishers worldwide. Dedicate a sacred lamp with your wish for peace, prosperity, and loved ones.
+            </p>
+
+            <!-- Counter Badge -->
+            <div class="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-rolex-dark border border-gold-champagne/40 shadow-xl mb-10">
+                <span class="w-3 h-3 rounded-full bg-gold-champagne animate-ping"></span>
+                <span class="text-xs font-cinzel text-stone-300 uppercase tracking-widest">Total Diyas Kindled Worldwide:</span>
+                <span id="globalDiyaCounter" class="font-mono text-xl text-gold-light font-bold">10,842</span>
+            </div>
+
+            <!-- Light a Lamp Form -->
+            <div class="max-w-md mx-auto p-6 rounded-lg bg-velvet-card border border-gold-champagne/30 shadow-2xl mb-12">
+                <div class="space-y-4 text-left">
+                    <div>
+                        <label class="block text-xs font-cinzel uppercase tracking-widest text-gold-champagne mb-1">Your Name</label>
+                        <input type="text" id="wishAuthorInput" placeholder="e.g. Biswajit" class="w-full px-4 py-2.5 rounded-sm bg-rolex-deep border border-gold-champagne/30 focus:border-gold-champagne text-stone-100 text-sm focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-cinzel uppercase tracking-widest text-gold-champagne mb-1">Your Sacred Wish / Blessing</label>
+                        <input type="text" id="wishTextInput" placeholder="e.g. May joy and good health bless all homes!" class="w-full px-4 py-2.5 rounded-sm bg-rolex-deep border border-gold-champagne/30 focus:border-gold-champagne text-stone-100 text-sm focus:outline-none">
+                    </div>
+                    <button onclick="submitWishLamp()" class="w-full py-3 bg-gradient-to-r from-gold-light via-gold-champagne to-gold-antique text-rolex-deep font-cinzel font-bold text-xs uppercase tracking-widest hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4 text-rolex-deep" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.789l1.599.799L9 4.323V3a1 1 0 011-1z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>CONSECRATE YOUR LAMP</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Floating Lamps Showcase -->
+            <div id="wishesGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-left">
+                <!-- Preset authentic blessings -->
+                <div class="p-4 rounded-sm bg-rolex-dark/60 border border-gold-champagne/20">
+                    <div class="flex items-center justify-between text-xs font-cinzel text-gold-champagne mb-2">
+                        <span>Aarav & Meera</span>
+                        <span class="text-stone-500 font-mono text-[10px]">Just now</span>
+                    </div>
+                    <p class="text-stone-300 text-xs italic font-serif">"Praying for peace, health, and new beginnings across all families."</p>
+                </div>
+                <div class="p-4 rounded-sm bg-rolex-dark/60 border border-gold-champagne/20">
+                    <div class="flex items-center justify-between text-xs font-cinzel text-gold-champagne mb-2">
+                        <span>Pooja Sharma</span>
+                        <span class="text-stone-500 font-mono text-[10px]">2m ago</span>
+                    </div>
+                    <p class="text-stone-300 text-xs italic font-serif">"May Lakshmi smile on every honest endeavor and heart."</p>
+                </div>
+                <div class="p-4 rounded-sm bg-rolex-dark/60 border border-gold-champagne/20">
+                    <div class="flex items-center justify-between text-xs font-cinzel text-gold-champagne mb-2">
+                        <span>The Singhania Family</span>
+                        <span class="text-stone-500 font-mono text-[10px]">5m ago</span>
+                    </div>
+                    <p class="text-stone-300 text-xs italic font-serif">"Warmest Deepavali love to all friends across the seas!"</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- LIVE GREETING CARD PREVIEW & EXPORT STUDIO                         -->
+        <!-- =================================================================== -->
+        <section id="card-preview" class="py-28 px-4 bg-gradient-to-b from-rolex-deep via-velvet-obsidian to-rolex-deep border-t border-gold-champagne/20 relative">
+            <div class="max-w-5xl mx-auto text-center">
+                
+                <div class="text-gold-champagne font-cinzel text-xs tracking-super-wide uppercase mb-3 font-semibold">
+                    HAUTE HORLOGERIE GREETING CARD
+                </div>
+                
+                <h2 class="font-garamond text-4xl sm:text-5xl text-stone-100 font-normal leading-tight mb-4">
+                    Your Personalized Consecration Card
+                </h2>
+                
+                <p class="text-stone-300 font-light text-sm sm:text-base max-w-xl mx-auto mb-12">
+                    Crafted like a bespoke collector's heirloom. Download this card in high resolution or share directly with your family and colleagues on WhatsApp.
+                </p>
+
+                <!-- THE CARD ELEMENT (CANVAS READY) -->
+                <div class="max-w-2xl mx-auto relative group">
+                    
+                    <!-- Decorative Golden Frame (Rolex Bezel & Indian Filigree) -->
+                    <div id="greetingCardBox" class="relative p-8 sm:p-12 rounded-lg bg-gradient-to-b from-rolex-deep via-velvet-card to-rolex-dark border-2 border-gold-champagne/60 shadow-[0_0_50px_rgba(223,183,108,0.2)] overflow-hidden">
+                        
+                        <!-- Corner Filigrees -->
+                        <div class="absolute top-2 left-2 text-gold-champagne/60 text-xl">✦</div>
+                        <div class="absolute top-2 right-2 text-gold-champagne/60 text-xl">✦</div>
+                        <div class="absolute bottom-2 left-2 text-gold-champagne/60 text-xl">✦</div>
+                        <div class="absolute bottom-2 right-2 text-gold-champagne/60 text-xl">✦</div>
+                        
+                        <!-- Inner Border with fluted rim pattern -->
+                        <div class="border border-gold-champagne/30 rounded p-6 sm:p-8 relative">
+                            
+                            <!-- Crest -->
+                            <div class="flex flex-col items-center justify-center mb-6">
+                                <div class="w-12 h-12 flex items-center justify-center mb-2">
+                                    <svg viewBox="0 0 100 100" class="w-12 h-12 drop-shadow-[0_0_12px_rgba(223,183,108,0.6)]">
+                                        <path d="M20 75 L80 75 L75 83 L25 83 Z" fill="#dfb76c"/>
+                                        <circle cx="20" cy="48" r="5" fill="#dfb76c"/>
+                                        <circle cx="35" cy="36" r="5.5" fill="#dfb76c"/>
+                                        <circle cx="50" cy="24" r="6.5" fill="#dfb76c"/>
+                                        <circle cx="65" cy="36" r="5.5" fill="#dfb76c"/>
+                                        <circle cx="80" cy="48" r="5" fill="#dfb76c"/>
+                                        <path d="M20 53 L35 41 L50 30 L65 41 L80 53 L75 73 L25 73 Z" fill="none" stroke="#dfb76c" stroke-width="2.5"/>
+                                        <path d="M50 12 C44 24 40 36 50 46 C60 36 56 24 50 12 Z" fill="#ffbe0b"/>
+                                    </svg>
+                                </div>
+                                <span class="font-cinzel text-xs tracking-super-wide text-gold-champagne uppercase font-bold">SHUBH DEEPAVALI</span>
+                                <span class="text-[9px] tracking-widest text-stone-400 uppercase mt-0.5 font-mono">SAMVAT 2083 · SUPERLATIVE LIGHT</span>
+                            </div>
+
+                            <!-- Salutation -->
+                            <div class="text-stone-300 font-cinzel text-xs uppercase tracking-widest mb-1">
+                                SPECIALLY PRESENTED TO
+                            </div>
+
+                            <!-- Recipient Name In Gold Script -->
+                            <h3 id="cardRecipientName" class="font-garamond text-3xl sm:text-5xl font-semibold text-gradient-gold mb-4 leading-tight">
+                                Biswajit & Family
+                            </h3>
+
+                            <!-- Auspicious Sloka / Blessing -->
+                            <div class="py-4 border-y border-gold-champagne/20 my-4">
+                                <p class="text-gold-light font-garamond italic text-base sm:text-lg max-w-lg mx-auto leading-relaxed" id="cardBlessingBody">
+                                    "May the festival of lights usher in boundless prosperity, radiant health, and divine serenity to your doorstep. May every endeavor of yours be touched by golden victory."
+                                </p>
+                            </div>
+
+                            <!-- Sender Signature -->
+                            <div class="mt-6 flex flex-col items-center">
+                                <span class="text-[10px] font-cinzel tracking-widest text-stone-400 uppercase">WITH ETERNAL RESPECT & FESTIVE WISHES</span>
+                                <span id="cardSenderName" class="font-script text-2xl sm:text-3xl text-gold-champagne mt-1">
+                                    Biswajit
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Action Bar for Greeting Card -->
+                    <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+                        <button onclick="downloadCardImage()" id="downloadCardBtn" class="px-6 py-3 bg-gradient-to-r from-gold-light via-gold-champagne to-gold-antique text-rolex-deep font-cinzel font-bold text-xs uppercase tracking-widest hover:brightness-110 shadow-lg shadow-gold-champagne/20 transition-all flex items-center gap-2">
+                            <svg class="w-4 h-4 text-rolex-deep" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            <span>DOWNLOAD HIGH-RES CARD</span>
+                        </button>
+
+                        <button onclick="shareOnWhatsApp()" class="px-6 py-3 bg-[#25D366] text-white hover:brightness-110 font-cinzel font-bold text-xs uppercase tracking-widest transition-all flex items-center gap-2 shadow-lg shadow-[#25D366]/20">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.954 2.802.955h.005c3.18 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.766c0 5.519-4.481 10-10 10-1.748 0-3.391-.453-4.832-1.246l-5.168 1.354 1.381-5.048c-.902-1.503-1.381-3.23-1.381-5.06 0-5.519 4.481-10 10-10 5.519 0 10 4.481 10 10z"/>
+                            </svg>
+                            <span>SEND ON WHATSAPP</span>
+                        </button>
+
+                        <button onclick="openPersonalizeModal()" class="px-6 py-3 border border-gold-champagne/50 hover:border-gold-champagne text-gold-light text-xs font-cinzel uppercase tracking-widest transition-all flex items-center gap-2">
+                            <svg class="w-4 h-4 text-gold-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                            </svg>
+                            <span>CUSTOMIZE NAMES & MESSAGE</span>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =================================================================== -->
+    <!-- ROLEX LUXURY FOOTER                                                 -->
+    <!-- =================================================================== -->
+    <footer class="bg-rolex-deep border-t border-gold-champagne/20 py-16 px-4 relative z-20">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+            
+            <!-- Crest -->
+            <div class="w-12 h-12 flex items-center justify-center mb-4">
+                <svg viewBox="0 0 100 100" class="w-10 h-10">
+                    <path d="M20 78 L80 78 L75 86 L25 86 Z" fill="#dfb76c"/>
+                    <circle cx="20" cy="48" r="4" fill="#dfb76c"/>
+                    <circle cx="35" cy="36" r="4.5" fill="#dfb76c"/>
+                    <circle cx="50" cy="24" r="5.5" fill="#dfb76c"/>
+                    <circle cx="65" cy="36" r="4.5" fill="#dfb76c"/>
+                    <circle cx="80" cy="48" r="4" fill="#dfb76c"/>
+                    <path d="M20 53 L35 41 L50 30 L65 41 L80 53 L75 75 L25 75 Z" fill="none" stroke="#dfb76c" stroke-width="2"/>
+                    <path d="M50 14 C44 26 40 38 50 48 C60 38 56 26 50 14 Z" fill="#ffbe0b"/>
+                </svg>
+            </div>
+
+            <div class="font-cinzel text-lg tracking-widest text-gold-champagne font-bold mb-2">SHUBH DEEPAVALI</div>
+            <p class="text-stone-400 text-xs font-sans max-w-lg mb-8 tracking-wider">
+                Crafted in the eternal spirit of Indian horology and supreme aesthetic perfection. May timeless light forever guide your steps.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-8 text-xs font-cinzel tracking-widest text-stone-300 uppercase mb-10">
+                <a href="#hero" class="hover:text-gold-champagne transition-colors">The Radiance</a>
+                <a href="#features" class="hover:text-gold-champagne transition-colors">Craftsmanship</a>
+                <a href="#interactive-diya" class="hover:text-gold-champagne transition-colors">Kindle Diya</a>
+                <a href="#card-preview" class="hover:text-gold-champagne transition-colors">Greeting Card</a>
+                <button onclick="openPersonalizeModal()" class="hover:text-gold-champagne transition-colors uppercase">Personalize</button>
+            </div>
+
+            <div class="w-24 h-[1px] bg-gold-champagne/20 mb-6"></div>
+
+            <div class="text-[11px] text-stone-500 font-mono tracking-widest">
+                © 2026 THE ROYAL DEEPAVALI EDITION · CRAFTED WITH DEVOTION & PERPETUAL LIGHT
+            </div>
+        </div>
+    </footer>
+
+    <!-- =================================================================== -->
+    <!-- PERSONALIZATION STUDIO MODAL                                        -->
+    <!-- =================================================================== -->
+    <div id="personalizeModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="relative w-full max-w-lg bg-velvet-card border-2 border-gold-champagne/60 rounded-lg p-6 sm:p-8 shadow-[0_0_60px_rgba(223,183,108,0.3)] animate-modal-pop">
+            
+            <!-- Close Button -->
+            <button onclick="closePersonalizeModal()" class="absolute top-4 right-4 text-stone-400 hover:text-gold-champagne p-1" aria-label="Close modal">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center mb-6">
+                <div class="w-10 h-10 mx-auto flex items-center justify-center mb-2">
+                    <svg viewBox="0 0 100 100" class="w-8 h-8">
+                        <path d="M20 75 L80 75 L75 83 L25 83 Z" fill="#dfb76c"/>
+                        <circle cx="50" cy="24" r="6" fill="#dfb76c"/>
+                        <path d="M20 53 L50 30 L80 53 L75 73 L25 73 Z" fill="none" stroke="#dfb76c" stroke-width="2"/>
+                        <path d="M50 12 C44 24 40 36 50 46 C60 36 56 24 50 12 Z" fill="#ffbe0b"/>
+                    </svg>
+                </div>
+                <h3 class="font-garamond text-2xl sm:text-3xl font-semibold text-stone-100">Consecrate Your Greeting</h3>
+                <p class="text-xs text-stone-400 font-sans mt-1">Enter your details to generate a bespoke Rolex-styled Diwali website link.</p>
+            </div>
+
+            <!-- Form -->
+            <div class="space-y-4 text-left">
+                <!-- Recipient Name -->
+                <div>
+                    <label class="block text-xs font-cinzel uppercase tracking-widest text-gold-champagne mb-1.5 font-semibold">
+                        Who is this greeting for? (Recipient Name)
+                    </label>
+                    <input type="text" id="modalRecipientInput" placeholder="e.g. Biswajit, The Kapoor Family, Dr. Roy" class="w-full px-4 py-2.5 rounded-sm bg-rolex-deep border border-gold-champagne/40 focus:border-gold-champagne text-stone-100 text-sm focus:outline-none focus:ring-1 focus:ring-gold-champagne">
+                </div>
+
+                <!-- Sender Name -->
+                <div>
+                    <label class="block text-xs font-cinzel uppercase tracking-widest text-gold-champagne mb-1.5 font-semibold">
+                        Your Name / Family (Sender)
+                    </label>
+                    <input type="text" id="modalSenderInput" placeholder="e.g. Biswajit, The Sharma Family" class="w-full px-4 py-2.5 rounded-sm bg-rolex-deep border border-gold-champagne/40 focus:border-gold-champagne text-stone-100 text-sm focus:outline-none focus:ring-1 focus:ring-gold-champagne">
+                </div>
+
+                <!-- Blessing Theme Selector -->
+                <div>
+                    <label class="block text-xs font-cinzel uppercase tracking-widest text-gold-champagne mb-1.5 font-semibold">
+                        Select Sacred Blessing Theme
+                    </label>
+                    <select id="modalBlessingSelect" class="w-full px-4 py-2.5 rounded-sm bg-rolex-deep border border-gold-champagne/40 focus:border-gold-champagne text-stone-100 text-sm focus:outline-none focus:ring-1 focus:ring-gold-champagne">
+                        <option value="prosperity">Lakshmi's Boundless Prosperity & Wealth</option>
+                        <option value="wisdom">Saraswati's Illumination & Divine Wisdom</option>
+                        <option value="health">Aarogya: Radiant Health & Longevity</option>
+                        <option value="victory">Vijaya: Royal Splendor & Unbroken Success</option>
+                    </select>
+                </div>
+
+                <!-- Custom Note Optional -->
+                <div>
+                    <label class="block text-xs font-cinzel uppercase tracking-widest text-gold-champagne mb-1.5 font-semibold">
+                        Custom Personal Note (Optional)
+                    </label>
+                    <textarea id="modalCustomNote" rows="2" placeholder="Leave empty for traditional Sanskrit blessing, or add your heartfelt message..." class="w-full px-4 py-2 rounded-sm bg-rolex-deep border border-gold-champagne/40 focus:border-gold-champagne text-stone-100 text-sm focus:outline-none"></textarea>
+                </div>
+
+                <!-- Buttons -->
+                <div class="pt-4 flex flex-col sm:flex-row gap-3">
+                    <button onclick="applyPersonalization()" class="flex-1 py-3 bg-gradient-to-r from-gold-light via-gold-champagne to-gold-antique text-rolex-deep font-cinzel font-bold text-xs uppercase tracking-widest hover:brightness-110 shadow-lg shadow-gold-champagne/20 transition-all text-center">
+                        UPDATE & VIEW GREETING
+                    </button>
+                    <button onclick="copyShareableUrl()" class="px-5 py-3 border border-gold-champagne/60 text-gold-light hover:bg-gold-champagne/15 text-xs font-cinzel uppercase tracking-wider transition-all">
+                        Copy Unique URL
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 px-5 py-3 bg-rolex-dark border border-gold-champagne text-gold-light text-xs font-cinzel rounded shadow-2xl">
+        <span class="text-gold-champagne text-base">✦</span>
+        <span id="toastMessage">Unique Diwali Greeting link copied!</span>
+    </div>
+
+    <!-- HIDDEN CANVAS FOR HIGH-RES CARD IMAGE GENERATION -->
+    <canvas id="cardExportCanvas" width="1200" height="800" class="hidden"></canvas>
+
+    <!-- SCRIPTS -->
+    <script src="script.js"></script>
+</body>
+</html>

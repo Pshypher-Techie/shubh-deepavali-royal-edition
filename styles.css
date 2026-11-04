@@ -1,0 +1,194 @@
+/* ==========================================================================
+   SHUBH DEEPAVALI — LUXURY ROLEX HOROLOGY AESTHETIC STYLES
+   Combining Rolex's Haute Horlogerie Visual Language with Royal Indian Art
+   ========================================================================== */
+
+/* Root Variables */
+:root {
+    --rolex-deep: #011910;
+    --rolex-dark: #03261a;
+    --rolex-primary: #004b2e;
+    --rolex-emerald: #006039;
+    --gold-champagne: #dfb76c;
+    --gold-light: #f5e3b5;
+    --gold-pure: #d4af37;
+    --gold-antique: #b38728;
+    --diya-amber: #ff9f1c;
+    --diya-flame: #ff5400;
+}
+
+/* Smooth Scrolling & Body setup */
+html {
+    scroll-behavior: smooth;
+    background-color: #080d0b;
+}
+
+body {
+    background-color: #080d0b;
+    color: #e5e5e5;
+    overflow-x: hidden;
+}
+
+/* Rolex Background Radial Lighting */
+.bg-radial-rolex {
+    background: radial-gradient(circle at 50% 30%, #003822 0%, #011910 50%, #080d0b 95%);
+}
+
+/* Indian Jali Lattice Watermark SVG Pattern */
+.jali-pattern {
+    background-image: radial-gradient(circle, rgba(223, 183, 108, 0.25) 1px, transparent 1px),
+                      radial-gradient(circle, rgba(223, 183, 108, 0.15) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+}
+
+/* Gold Foil Text Shimmer */
+.text-gradient-gold {
+    background: linear-gradient(135deg, #fff2cc 0%, #dfb76c 40%, #f7dfa5 60%, #b38728 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Rolex Bezel Fluted Hairline Texture */
+.rolex-fluted-border {
+    border-image: linear-gradient(to right, #dfb76c, #99752b, #dfb76c) 1;
+}
+
+/* Subtle Shimmer Animation */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.gold-shimmer-bg {
+    background: linear-gradient(90deg, rgba(223,183,108,0.1) 0%, rgba(245,227,181,0.3) 50%, rgba(223,183,108,0.1) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 4s infinite linear;
+}
+
+/* Realistic Diya Flame Flicker */
+@keyframes flameFlicker {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        filter: drop-shadow(0 0 12px rgba(255, 159, 28, 0.8));
+    }
+    20% {
+        transform: scale(1.04, 0.96) rotate(-1.5deg);
+        filter: drop-shadow(0 0 16px rgba(255, 190, 11, 0.9));
+    }
+    40% {
+        transform: scale(0.97, 1.05) rotate(1.5deg);
+        filter: drop-shadow(0 0 10px rgba(255, 84, 0, 0.7));
+    }
+    60% {
+        transform: scale(1.02, 0.98) rotate(-0.8deg);
+        filter: drop-shadow(0 0 14px rgba(255, 190, 11, 0.85));
+    }
+    80% {
+        transform: scale(0.98, 1.02) rotate(1deg);
+        filter: drop-shadow(0 0 12px rgba(255, 159, 28, 0.75));
+    }
+}
+
+.animate-flame-flicker {
+    animation: flameFlicker 1.8s infinite ease-in-out;
+}
+
+/* Slow Cosmic Astrolabe Rotations */
+@keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spinSlowReverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+.animate-spin-slow {
+    animation: spinSlow 50s infinite linear;
+}
+
+.animate-spin-reverse {
+    animation: spinSlowReverse 65s infinite linear;
+}
+
+/* Sound Equalizer Bars Animation */
+@keyframes barBounce {
+    0%, 100% { height: 4px; }
+    50% { height: 12px; }
+}
+
+.sound-playing .sound-bar:nth-child(1) {
+    animation: barBounce 0.8s infinite ease-in-out;
+}
+.sound-playing .sound-bar:nth-child(2) {
+    animation: barBounce 0.6s infinite ease-in-out 0.2s;
+}
+.sound-playing .sound-bar:nth-child(3) {
+    animation: barBounce 0.9s infinite ease-in-out 0.4s;
+}
+
+/* Modal Appear Animation */
+@keyframes modalPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.animate-modal-pop {
+    animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Diya Active Glow State */
+.diya-card.active-lit {
+    border-color: #dfb76c;
+    background: radial-gradient(circle at 50% 20%, rgba(223, 183, 108, 0.15) 0%, rgba(3, 38, 26, 0.95) 75%);
+    box-shadow: 0 0 30px rgba(223, 183, 108, 0.3);
+}
+
+.diya-card.active-lit .diya-flame {
+    opacity: 1 !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #011910;
+}
+::-webkit-scrollbar-thumb {
+    background: #443212;
+    border-radius: 4px;
+    border: 1px solid rgba(223, 183, 108, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #dfb76c;
+}
+
+/* Luxury Card Metallic Sheen on Hover */
+.group:hover .relative.bg-velvet-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 40%, rgba(223, 183, 108, 0.08) 50%, transparent 60%);
+    pointer-events: none;
+    animation: shimmer 1.5s ease-out;
+}
+
+/* Fade in utility */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
